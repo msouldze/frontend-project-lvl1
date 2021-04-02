@@ -29,9 +29,7 @@ const isEven = (yesOrNo) => {
       console.log(`'yes' is wrong answer ;(. Correct answer was 'no'. \nLet's try again, ${name}!`);
     }
   }
-  if (correctAnswerCount === 3) {
-    return `Congratulations, ${name}!`;
-  }
+  return `Congratulations, ${name}!`;
 };
 
 console.log(isEven());
