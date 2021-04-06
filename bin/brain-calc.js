@@ -41,7 +41,7 @@ const whatResult = () => {
       answerCount += 1;
     } else {
       console.log(
-        `'${answer}' is wrong answer ;(. Correct answer was '${result}'.`;
+        `'${answer}' is wrong answer ;(. Correct answer was '${result}'.`,
       );
       return `Let's try again, ${name}!`;
     }

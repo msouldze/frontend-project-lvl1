@@ -15,5 +15,5 @@ const getRandomNumber = () => Math.ceil(Math.random() * 100);
 const question = (argument) => `Question: ${argument}`;
 
 export {
-  greeting, getRandomNumber, question, name
+  greeting, getRandomNumber, question, name,
 };
