@@ -3,8 +3,11 @@
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 ![Actions status](https://github.com/msouldze/frontend-project-lvl1/actions/workflows/node.js.yml/badge.svg)
 
-### Link to the recorded asciicast of step 5
+### Link to the recorded asciicast of brain-even
 https://asciinema.org/a/u0fU5ecFjY73c1AsvqMvGpq7z
 
-### Link to the recorded asciicast of step 6
+### Link to the recorded asciicast of brain-calc
 https://asciinema.org/a/g9bcz6XzKMK1fr5gUcPKBOOkX
+
+### Link to the recorded asciicast of brain-gcd
+https://asciinema.org/a/6UeNqMgQAaEGKnBmwVa2GoiAJ
