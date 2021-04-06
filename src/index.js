@@ -14,6 +14,4 @@ const getRandomNumber = () => Math.ceil(Math.random() * 100);
 // Question for player
 const question = (argument) => `Question: ${argument}`;
 
-export {
-greeting, getRandomNumber, question, name
-};
+export { greeting, getRandomNumber, question, name };
