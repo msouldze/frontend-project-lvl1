@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
-import { greeting, getRandomNumber, question, name } from '../src/index.js';
+import {
+greeting, getRandomNumber, question, name
+} from '../src/index.js';
 
 const whatResult = () => {
   // Welcoming and a request for player's name

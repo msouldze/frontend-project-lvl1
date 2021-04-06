@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
-import { greeting, getRandomNumber, question, name } from '../src/index.js';
+import {
+greeting, getRandomNumber, question, name
+} from '../src/index.js';
 
 const isEven = () => {
   // Welcoming and a request for player's name
@@ -17,8 +19,8 @@ const isEven = () => {
     // Await an answer
     const answer = readlineSync.question('Your answer: ');
     if (
-      (randomNumber % 2 === 0 && answer === 'yes') ||
-      (randomNumber % 2 !== 0 && answer === 'no')
+      (randomNumber % 2 === 0 && answer === 'yes')
+      || (randomNumber % 2 !== 0 && answer === 'no')
     ) {
       console.log('Correct!');
     } else if (randomNumber % 2 === 0 && answer === 'no') {
