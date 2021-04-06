@@ -1,9 +1,7 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
-import {
-greeting, getRandomNumber, question, name
-} from '../src/index.js';
+import { greeting, getRandomNumber, question, name } from '../src/index.js';
 
 const whatResult = () => {
   // Welcoming and a request for player's name
@@ -11,7 +9,7 @@ const whatResult = () => {
 
   // Introducing game's rule
   console.log('What is the result of the expression?');
-
+  let answerCount = 0;
   for (let i = 0; i < 3; i += 1) {
     const num1 = getRandomNumber();
     const num2 = getRandomNumber();
@@ -38,11 +36,17 @@ const whatResult = () => {
     const result = expressionResult(num1, num2);
     if (Number(answer) === Number(result)) {
       console.log('Correct!');
+      answerCount += 1;
     } else {
-      return `'${answer}' is wrong answer ;(. Correct answer was '${result}'. \nLet's try again, ${name}!`;
+      console.log(
+        `'${answer}' is wrong answer ;(. Correct answer was '${result}'.`
+      );
+      return `Let's try again, ${name}!`;
     }
   }
-  return `Congratulations, ${name}!`;
+  if (answerCount === 3) {
+    return `Congratulations, ${name}!`;
+  }
 };
 
 console.log(whatResult());
