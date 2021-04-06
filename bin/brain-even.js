@@ -2,7 +2,7 @@
 
 import readlineSync from 'readline-sync';
 import {
-greeting, getRandomNumber, question, name
+  greeting, getRandomNumber, question, name,
 } from '../src/index.js';
 
 const isEven = () => {

@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
-import { greeting, getRandomNumber, question, name } from '../src/index.js';
+import {
+  greeting, getRandomNumber, question, name,
+} from '../src/index.js';
 
 const whatResult = () => {
   // Welcoming and a request for player's name
@@ -39,7 +41,7 @@ const whatResult = () => {
       answerCount += 1;
     } else {
       console.log(
-        `'${answer}' is wrong answer ;(. Correct answer was '${result}'.`
+        `'${answer}' is wrong answer ;(. Correct answer was '${result}'.`;
       );
       return `Let's try again, ${name}!`;
     }
