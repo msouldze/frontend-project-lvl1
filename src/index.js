@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 import readlineSync from 'readline-sync';
 
 // Greetings
@@ -10,10 +11,9 @@ const greeting = () => {
 
 // Get a random number
 const getRandomNumber = () => Math.ceil(Math.random() * 100);
+const getRandomAcc = () => Math.ceil(Math.random() * 10);
 
 // Question for player
 const question = (argument) => `Question: ${argument}`;
 
-export {
-  greeting, getRandomNumber, question, name,
-};
+export { greeting, getRandomNumber, question, name, getRandomAcc };
