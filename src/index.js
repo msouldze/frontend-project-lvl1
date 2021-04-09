@@ -10,7 +10,12 @@ const greeting = () => {
 };
 
 // Is number even or odd
-const isEven = (num) => num % 2 === 0 ? true : false;
+const isEven = (num) => {
+  if (num % 2 === 0) {
+    return true;
+  }
+  return false;
+};
 
 // Get a random number
 const getRandomNumber = () => Math.ceil(Math.random() * 100);
