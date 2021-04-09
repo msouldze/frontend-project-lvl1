@@ -25,10 +25,10 @@ for (let i = 0; i < 3; i += 1) {
     console.log('Correct!');
     answerCount += 1;
   } else if (result === true && answer === 'no') {
-    console.log(`${answer} is wrong answer ;(. Correct answer was 'yes'.`);
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes'.`);
     console.log(loss());
   } else {
-    console.log(`${answer} is wrong answer ;(. Correct answer was 'no'.`);
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.`);
     console.log(loss());
   }
 }
