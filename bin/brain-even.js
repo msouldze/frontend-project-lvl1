@@ -11,6 +11,7 @@ console.log(greeting());
 // Introducing game's rule
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 let answerCount = 0;
+let wrongAnswerCount = 0;
 for (let i = 0; i < 3; i += 1) {
   const randomNumber = getRandomNumber();
   console.log(question(randomNumber));
@@ -24,14 +25,19 @@ for (let i = 0; i < 3; i += 1) {
   ) {
     console.log('Correct!');
     answerCount += 1;
-  } else if (result === true && answer === 'no') {
+  } else if (result === true && answer !== 'yes') {
     console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes'.`);
-    console.log(loss());
+    wrongAnswerCount += 1;
+    i = 3;
   } else {
     console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.`);
+    wrongAnswerCount += 1;
+    i = 3;
+  }
+  if (answerCount === 3) {
+    console.log(win());
+  }
+  if (wrongAnswerCount === 1) {
     console.log(loss());
   }
-}
-if (answerCount === 3) {
-  console.log(win());
 }
