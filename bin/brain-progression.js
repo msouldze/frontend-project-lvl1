@@ -8,6 +8,7 @@ import {
   getRandomAcc,
   win,
   loss,
+  arithmeticProgression,
 } from '../src/index.js';
 
 // Welcoming and a request for player's name
@@ -16,22 +17,18 @@ console.log(greeting());
 // Introducing game's rule
 console.log('What number is missing in the progression?');
 let answerCount = 0;
+let wrongAnswerCount = 0;
+
 for (let i = 0; i < 3; i += 1) {
   const num1 = getRandomNumber();
   const num2 = getRandomAcc();
 
-  // Calculating expression
-  const progressionOfArray = [];
-  let value = num1;
-  progressionOfArray.push(value);
-  for (let j = 0; j < 9; j += 1) {
-    value += num2;
-    progressionOfArray.push(value);
-  }
+  // Progression
+  const progression = arithmeticProgression(num1, num2);
   const indexOfArray = num2 - 1;
-  const result = progressionOfArray[indexOfArray];
-  progressionOfArray[indexOfArray] = '..';
-  const stringArray = progressionOfArray.join(' ');
+  const result = progression[indexOfArray];
+  progression[indexOfArray] = '..';
+  const stringArray = progression.join(' ');
 
   console.log(question(stringArray));
 
@@ -42,9 +39,13 @@ for (let i = 0; i < 3; i += 1) {
     answerCount += 1;
   } else {
     console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'.`);
+    wrongAnswerCount += 1;
+    i = 3;
+  }
+  if (answerCount === 3) {
+    console.log(win());
+  }
+  if (wrongAnswerCount === 1) {
     console.log(loss());
   }
-}
-if (answerCount === 3) {
-  console.log(win());
 }

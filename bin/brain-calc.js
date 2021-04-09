@@ -10,6 +10,8 @@ console.log(greeting()); // Welcoming and a request for player's name
 console.log('What is the result of the expression?'); // Introducing game's rule
 
 let answerCount = 0;
+let wrongAnswerCount = 0;
+
 for (let i = 0; i < 3; i += 1) {
   const num1 = getRandomNumber();
   const num2 = getRandomNumber();
@@ -23,9 +25,13 @@ for (let i = 0; i < 3; i += 1) {
     answerCount += 1;
   } else {
     console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'.`);
-    console.log(loss());
+    wrongAnswerCount += 1;
+    i = 3;
   }
 }
 if (answerCount === 3) {
   console.log(win());
+}
+if (wrongAnswerCount === 1) {
+  console.log(loss());
 }

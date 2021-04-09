@@ -53,6 +53,18 @@ const gcd = (a, b) => {
   return result;
 };
 
+// Creating a progression
+const arithmeticProgression = (num1, num2) => {
+  const progression = [];
+  let value = num1;
+  progression.push(value);
+  for (let j = 0; j < 9; j += 1) {
+    value += num2;
+    progression.push(value);
+  }
+  return progression;
+};
+
 // Is it prime
 const isPrime = (number) => {
   if (number === 1) {
@@ -81,4 +93,5 @@ export {
   gcd,
   isPrime,
   isEven,
+  arithmeticProgression,
 };

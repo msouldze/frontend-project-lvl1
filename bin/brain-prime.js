@@ -11,6 +11,7 @@ console.log(greeting());
 // Introducing game's rule
 console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 let answerCount = 0;
+let wrongAnswerCount = 0;
 
 for (let i = 0; i < 3; i += 1) {
   const randomNumber = getRandomNumber();
@@ -27,12 +28,17 @@ for (let i = 0; i < 3; i += 1) {
     answerCount += 1;
   } else if (result === true && answer === 'no') {
     console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes'.`);
-    console.log(loss());
+    wrongAnswerCount += 1;
+    i = 3;
   } else {
     console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.`);
-    console.log(loss());
+    wrongAnswerCount += 1;
+    i = 3;
   }
 }
 if (answerCount === 3) {
   console.log(win());
+}
+if (wrongAnswerCount === 1) {
+  console.log(loss());
 }
