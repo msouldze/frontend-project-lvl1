@@ -2,7 +2,7 @@
 
 import readlineSync from 'readline-sync';
 import {
-  greeting, getRandomNumber, question, loss, win, orEven,
+  greeting, getRandomNumber, question, loss, win, isEven,
 } from '../src/index.js';
 
 // Welcoming and a request for player's name
@@ -17,7 +17,7 @@ for (let i = 0; i < 3; i += 1) {
 
   // Await an answer
   const answer = readlineSync.question('Your answer: ');
-  const result = orEven(randomNumber);
+  const result = isEven(randomNumber);
   if (
     (result === true && answer === 'yes')
     || (result === false && answer === 'no')
