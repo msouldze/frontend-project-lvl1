@@ -2,9 +2,9 @@
 
 import readlineSync from 'readline-sync';
 import {
-  greeting, getRandomNumber, question, loss, win, operator,
+  greeting, getRandomNumber, question, loss, win,
 } from '../src/index.js';
-import calculateExpression from '../games/calc.js';
+import calculateExpression, { operator } from '../games/calc.js';
 
 console.log(greeting()); // Welcoming and a request for player's name
 
