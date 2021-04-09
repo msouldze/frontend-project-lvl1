@@ -22,7 +22,7 @@ for (let i = 0; i < 3; i += 1) {
   // Checking if the result and the answer are equal or not
   const answer = readlineSync.question('Your answer: ');
   const result = gcd(num1, num2);
-  if (Number(answer) === Number(result)) {
+  if (parseFloat(answer) === parseFloat(result)) {
     console.log('Correct!');
     answerCount += 1;
   } else {
