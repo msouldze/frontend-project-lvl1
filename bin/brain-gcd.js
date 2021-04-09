@@ -12,7 +12,6 @@ console.log(greeting());
 // Introducing game's rule
 console.log('Find the greatest common divisor of given numbers.');
 let answerCount = 0;
-let wrongAnswerCount = 0;
 
 for (let i = 0; i < 3; i += 1) {
   const num1 = getRandomNumber();
@@ -30,11 +29,8 @@ for (let i = 0; i < 3; i += 1) {
     console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'.`);
     console.log(loss());
     answerCount += 1;
-    wrongAnswerCount += 1;
   }
-  if (answerCount === 3) {
-    console.log(win());
-  } else if (wrongAnswerCount === 1) {
-    i = 3;
-  }
+}
+if (answerCount === 3) {
+  console.log(win());
 }
