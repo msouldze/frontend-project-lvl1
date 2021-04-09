@@ -2,7 +2,7 @@
 
 import readlineSync from 'readline-sync';
 import {
-  greeting, getRandomNumber, question, loss, win,
+  greeting, getRandomNumber, question, loss, win, orEven,
 } from '../src/index.js';
 
 // Welcoming and a request for player's name
@@ -17,17 +17,18 @@ for (let i = 0; i < 3; i += 1) {
 
   // Await an answer
   const answer = readlineSync.question('Your answer: ');
+  const result = orEven(randomNumber);
   if (
-    (randomNumber % 2 === 0 && answer === 'yes')
-    || (randomNumber % 2 !== 0 && answer === 'no')
+    (result === true && answer === 'yes')
+    || (result === false && answer === 'no')
   ) {
     console.log('Correct!');
     answerCount += 1;
-  } else if (randomNumber % 2 === 0 && answer === 'no') {
-    console.log("'no' is wrong answer ;(. Correct answer was 'yes'.");
+  } else if (result === true && answer === 'no') {
+    console.log(`${answer} is wrong answer ;(. Correct answer was 'yes'.`);
     console.log(loss());
   } else {
-    console.log("'yes' is wrong answer ;(. Correct answer was 'no'.");
+    console.log(`${answer} is wrong answer ;(. Correct answer was 'no'.`);
     console.log(loss());
   }
 }

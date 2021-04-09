@@ -9,6 +9,9 @@ const greeting = () => {
   return `Hello, ${name}!`;
 };
 
+// Is number even or odd
+const isEven = (num) => num % 2 === 0 ? true : false;
+
 // Get a random number
 const getRandomNumber = () => Math.ceil(Math.random() * 100);
 const getRandomAcc = () => Math.ceil(Math.random() * 10);
@@ -72,4 +75,5 @@ export {
   win,
   gcd,
   isPrime,
+  isEven,
 };
