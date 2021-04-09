@@ -2,8 +2,9 @@
 
 import readlineSync from 'readline-sync';
 import {
-  greeting, getRandomNumber, question, loss, win, isEven,
+  greeting, getRandomNumber, question, loss, win,
 } from '../src/index.js';
+import isEven from '../games/even.js';
 
 // Welcoming and a request for player's name
 console.log(greeting());

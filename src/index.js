@@ -9,14 +9,6 @@ const greeting = () => {
   return `Hello, ${name}!`;
 };
 
-// Is number even or odd
-const isEven = (num) => {
-  if (num % 2 === 0) {
-    return true;
-  }
-  return false;
-};
-
 // Get a random number
 const getRandomNumber = () => Math.ceil(Math.random() * 100);
 const getRandomAcc = () => Math.ceil(Math.random() * 10);
@@ -28,56 +20,6 @@ const question = (argument) => `Question: ${argument}`;
 const operators = ['+', '-', '*'];
 const operator = operators[Math.floor(Math.random() * operators.length)];
 
-// Calculating expression
-const calculateExpression = (a, b) => {
-  if (operator === '+') {
-    return a + b;
-  } if (operator === '-') {
-    return a - b;
-  }
-  return a * b;
-};
-
-// Calculating greatest common divisor
-const gcd = (a, b) => {
-  let result = 0;
-  let min = a;
-  if (b < a) {
-    min = b;
-  }
-  for (let j = 2; j <= min; j += 1) {
-    if (a % j === 0 && b % j === 0) {
-      result = j;
-    }
-  }
-  return result;
-};
-
-// Creating a progression
-const arithmeticProgression = (num1, num2) => {
-  const progression = [];
-  let value = num1;
-  progression.push(value);
-  for (let j = 0; j < 9; j += 1) {
-    value += num2;
-    progression.push(value);
-  }
-  return progression;
-};
-
-// Is it prime
-const isPrime = (number) => {
-  if (number === 1) {
-    return false;
-  }
-  for (let i = 2; i < number / 2; i += 1) {
-    if (number % i === 0) {
-      return false;
-    }
-  }
-  return true;
-};
-
 const loss = () => `Let's try again, ${name}!`;
 const win = () => `Congratulations, ${name}!`;
 
@@ -87,11 +29,6 @@ export {
   question,
   operator,
   getRandomAcc,
-  calculateExpression,
   loss,
   win,
-  gcd,
-  isPrime,
-  isEven,
-  arithmeticProgression,
 };

@@ -8,8 +8,8 @@ import {
   getRandomAcc,
   win,
   loss,
-  arithmeticProgression,
 } from '../src/index.js';
+import arithmeticProgression from '../games/progression.js';
 
 // Welcoming and a request for player's name
 console.log(greeting());

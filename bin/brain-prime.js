@@ -2,8 +2,9 @@
 
 import readlineSync from 'readline-sync';
 import {
-  greeting, getRandomNumber, question, loss, win, isPrime,
+  greeting, getRandomNumber, question, loss, win,
 } from '../src/index.js';
+import isPrime from '../games/progression.js';
 
 // Welcoming and a request for player's name
 console.log(greeting());
