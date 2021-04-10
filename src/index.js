@@ -1,34 +1,41 @@
 /* eslint-disable object-curly-newline */
 import readlineSync from 'readline-sync';
+import gcd from '../games/gcd.js';
 
 // Greetings
 let name;
-const greeting = () => {
+export const greeting = () => {
   console.log('Welcome to the Brain Games!');
   name = readlineSync.question('May I have your name? ');
   return `Hello, ${name}!`;
 };
 
 // Get a random number
-const getRandomNumber = () => Math.ceil(Math.random() * 100);
-const getRandomAcc = () => Math.ceil(Math.random() * 10);
+export const getRandomNumber = () => Math.ceil(Math.random() * 100);
+export const getRandomAcc = () => Math.ceil(Math.random() * 10);
 
 // Question for player
-const question = (argument) => `Question: ${argument}`;
+export const question = (argument) => `Question: ${argument}`;
 
-// Operator for an expression
-const operators = ['+', '-', '*'];
-const operator = operators[Math.floor(Math.random() * operators.length)];
+export const comparisonGcd = () => {
+  for (let i = 0; i < 3; i += 1) {
+    const num1 = getRandomNumber();
+    const num2 = getRandomNumber();
+    let output = '';
+    const expression = `${num1} ${num2}`;
+    console.log(question(expression));
 
-const loss = () => `Let's try again, ${name}!`;
-const win = () => `Congratulations, ${name}!`;
-
-export {
-  greeting,
-  getRandomNumber,
-  question,
-  operator,
-  getRandomAcc,
-  loss,
-  win,
+    // Checking if the result and the answer are equal or not
+    const answer = readlineSync.question('Your answer: ');
+    const result = gcd(num1, num2);
+    if (parseFloat(answer) === parseFloat(result)) {
+      output = 'Correct!';
+      console.log(output);
+    } else {
+      output = `'${answer}' is wrong answer ;(. Correct answer was '${result}'.`;
+      console.log(output);
+      return `Let's try again, ${name}!`;
+    }
+  }
+  return `Congratulations, ${name}!`;
 };
