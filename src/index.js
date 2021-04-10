@@ -82,7 +82,7 @@ export const comparisonGcd = () => {
     } else {
       output = `'${answer}' is wrong answer ;(. Correct answer was '${result}'.`;
       console.log(output);
-      return `Let's try again, ${name}!`;
+      console.log(`Let's try again, ${name}!`);
     }
   }
   return `Congratulations, ${name}!`;
