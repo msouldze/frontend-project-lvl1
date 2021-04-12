@@ -3,6 +3,8 @@ import readlineSync from 'readline-sync';
 import gcd from '../games/gcd.js';
 import isEven from '../games/even.js';
 import calculateExpression, { operator } from '../games/calc.js';
+import arithmeticProgression from '../games/progression.js';
+import isPrime from '../games/prime.js';
 
 // Greetings
 let name;
@@ -83,6 +85,60 @@ export const comparisonGcd = () => {
       output = `'${answer}' is wrong answer ;(. Correct answer was '${result}'.`;
       console.log(output);
       console.log(`Let's try again, ${name}!`);
+    }
+  }
+  return `Congratulations, ${name}!`;
+};
+
+// Arithmetic progression
+export const comparisonProgression = () => {
+  for (let i = 0; i < 3; i += 1) {
+    let output = '';
+    const num1 = getRandomNumber();
+    const num2 = getRandomAcc();
+
+    // Progression
+    const progression = arithmeticProgression(num1, num2);
+    const indexOfArray = num2 - 1;
+    const result = progression[indexOfArray];
+    progression[indexOfArray] = '..';
+    const stringArray = progression.join(' ');
+
+    console.log(question(stringArray));
+
+    // Checking if the result and the answer are equal or not
+    const answer = readlineSync.question('Your answer: ');
+    if (parseFloat(answer) === parseFloat(result)) {
+      output = 'Correct!';
+      console.log(output);
+    } else {
+      output = `'${answer}' is wrong answer ;(. Correct answer was '${result}'.`;
+      console.log(output);
+      console.log(`Let's try again, ${name}!`);
+    }
+  }
+  return `Congratulations, ${name}!`;
+};
+
+export const comparisonPrime = () => {
+  for (let i = 0; i < 3; i += 1) {
+    const randomNumber = getRandomNumber();
+    console.log(question(randomNumber));
+
+    // Await an answer
+    const answer = readlineSync.question('Your answer: ');
+    const result = isPrime(randomNumber);
+    if (
+      (result === true && answer === 'yes')
+    || (result === false && answer === 'no')
+    ) {
+      console.log('Correct!');
+    } else if (result === true && answer !== 'yes') {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes'.`);
+      return `Let's try again, ${name}!`;
+    } else {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.`);
+      return `Let's try again, ${name}!`;
     }
   }
   return `Congratulations, ${name}!`;

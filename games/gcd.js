@@ -4,7 +4,7 @@ export default (a, b) => {
   if (b < a) {
     min = b;
   }
-  for (let j = 2; j <= min; j += 1) {
+  for (let j = 1; j <= min; j += 1) {
     if (a % j === 0 && b % j === 0) {
       result = j;
     }
