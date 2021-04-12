@@ -84,7 +84,7 @@ export const comparisonGcd = () => {
     } else {
       output = `'${answer}' is wrong answer ;(. Correct answer was '${result}'.`;
       console.log(output);
-      console.log(`Let's try again, ${name}!`);
+      return `Let's try again, ${name}!`;
     }
   }
   return `Congratulations, ${name}!`;
@@ -114,7 +114,7 @@ export const comparisonProgression = () => {
     } else {
       output = `'${answer}' is wrong answer ;(. Correct answer was '${result}'.`;
       console.log(output);
-      console.log(`Let's try again, ${name}!`);
+      return `Let's try again, ${name}!`;
     }
   }
   return `Congratulations, ${name}!`;
