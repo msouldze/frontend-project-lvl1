@@ -13,17 +13,17 @@ $ make install
 
 ### Illustrations
 
-#### Brain-even
+### Brain-even
 [![asciicast](https://asciinema.org/a/u0fU5ecFjY73c1AsvqMvGpq7z.svg)](https://asciinema.org/a/u0fU5ecFjY73c1AsvqMvGpq7z)
 
-#### Brain-calc
+### Brain-calc
 [![asciicast](https://asciinema.org/a/g9bcz6XzKMK1fr5gUcPKBOOkX.svg)](https://asciinema.org/a/g9bcz6XzKMK1fr5gUcPKBOOkX)
 
-#### Brain-gcd
-[![asciicast](https://asciinema.org/a/6UeNqMgQAaEGKnBmwVa2GoiAJ.svg)](https://asciinema.org/a/6UeNqMgQAaEGKnBmwVa2GoiAJ)
+### Brain-gcd
+[![asciicast](https://asciinema.org/a/w2EgajHlXB91bBFUeNfsEgb4h.svg)](https://asciinema.org/a/w2EgajHlXB91bBFUeNfsEgb4h)
 
-#### Brain-progression
+### Brain-progression
 [![asciicast](https://asciinema.org/a/OwenldgVFkqVW9b1tBOkHhfkZ.svg)](https://asciinema.org/a/OwenldgVFkqVW9b1tBOkHhfkZ)
 
-#### Brain-prime
+### Brain-prime
 [![asciicast](https://asciinema.org/a/shXvl9a3VzEnOoq71O3f3MOhT.svg)](https://asciinema.org/a/shXvl9a3VzEnOoq71O3f3MOhT)
