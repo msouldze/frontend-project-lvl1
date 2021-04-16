@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { getRandomNumber } from './utilities.js';
+import getRandomNumber from './utilities.js';
 
 export default (func, gameRule, expression = undefined) => {
   console.log('Welcome to the Brain Games!');
