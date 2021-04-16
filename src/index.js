@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
-import { getRandomNumber } from '../src/utilities.js';
+import { getRandomNumber } from './utilities.js';
 
-export const game = (func, gameRule, expression = undefined) => {
+export default (func, gameRule, expression = undefined) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
@@ -14,14 +14,14 @@ export const game = (func, gameRule, expression = undefined) => {
       const randomNum2 = getRandomNumber();
       const question = expression(randomNum1, randomNum2);
       console.log(`Question: ${question}`);
-      result = func(randomNum1, randomNum2);
+      result = String(func(randomNum1, randomNum2));
     } else {
       const randomNum = getRandomNumber();
       console.log(`Question: ${randomNum}`);
       result = func(randomNum) ? 'yes' : 'no';
     }
-    const answer = readlineSync.question('Your answer: '); 
-    if (result == answer) {
+    const answer = readlineSync.question('Your answer: ');
+    if (result === answer) {
       console.log('Correct!');
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'.`);
