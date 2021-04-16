@@ -13,3 +13,5 @@ export default (a, b) => {
 };
 
 export const expression = (a, b) => `${a} ${b}`;
+
+export const gameRule = 'Find the greatest common divisor of given numbers.';

@@ -1,4 +1,4 @@
-export default (number) => {
+export const isPrime = (number) => {
   if (number === 1) {
     return false;
   }
@@ -9,3 +9,5 @@ export default (number) => {
   }
   return true;
 };
+
+export const gameRule = 'Answer "yes" if the number is prime, otherwise answer "no".';

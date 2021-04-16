@@ -1,12 +1,7 @@
 #!/usr/bin/env node
 
-import { greeting, comparison2 } from '../src/index.js';
-import arithmeticProgression, { expression } from '../src/games/progression.js';
+import { game } from '../src/index.js';
+import arithmeticProgression, { gameRule, expression } from '../src/games/progression.js';
 
-// Welcoming and a request for player's name
-console.log(greeting());
-
-// Introducing game's rule
-console.log('What number is missing in the progression?');
-
-console.log(comparison2(arithmeticProgression, expression));
+const progressionGame = game(arithmeticProgression, gameRule, expression);
+console.log(progressionGame);

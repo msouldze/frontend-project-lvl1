@@ -23,3 +23,5 @@ export const expression = (num1, num2) => {
   const arrString = progression.join(' ');
   return arrString;
 };
+
+export const gameRule = 'What number is missing in the progression?';

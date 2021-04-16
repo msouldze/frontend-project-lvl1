@@ -1,58 +1,33 @@
 import readlineSync from 'readline-sync';
+import { getRandomNumber } from '../src/utilities.js';
 
-// Greetings
-let name;
-export const greeting = () => {
+export const game = (func, gameRule, expression = undefined) => {
   console.log('Welcome to the Brain Games!');
-  name = readlineSync.question('May I have your name? ');
-  return `Hello, ${name}!`;
-};
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
+  console.log(gameRule);
 
-// Get a random number
-const getRandomNumber = () => Math.ceil(Math.random() * 10);
-
-// Question for player
-const question = (argument) => `Question: ${argument}`;
-
-// Await an answer and check if the result and the answer are equal
-export const comparison = (func) => {
   for (let i = 0; i < 3; i += 1) {
-    const randomNumber = getRandomNumber();
-    console.log(question(randomNumber));
-
-    const answer = readlineSync.question('Your answer: ');
-    const result = func(randomNumber);
-    if (
-      (result === true && answer === 'yes')
-    || (result === false && answer === 'no')
-    ) {
-      console.log('Correct!');
-    } else if (result === true && answer !== 'yes') {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes'.`);
-      return `Let's try again, ${name}!`;
+    let result;
+    let answer;
+    if (expression !== undefined) {
+      const randomNum1 = getRandomNumber();
+      const randomNum2 = getRandomNumber();
+      const question = expression(randomNum1, randomNum2);
+      console.log(`Question: ${question}`);
+      answer = parseFloat(readlineSync.question('Your answer: '));
+      result = parseFloat(func(randomNum1, randomNum2));
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.`);
-      return `Let's try again, ${name}!`;
+      const randomNum = getRandomNumber();
+      console.log(`Question: ${randomNum}`);
+      answer = readlineSync.question('Your answer: ');
+      result = func(randomNum) ? 'yes' : 'no';
     }
-  }
-  return `Congratulations, ${name}!`;
-};
-
-export const comparison2 = (func, expression) => {
-  for (let i = 0; i < 3; i += 1) {
-    let output = '';
-    const num1 = getRandomNumber();
-    const num2 = getRandomNumber();
-    console.log(question(expression(num1, num2)));
-
-    const answer = readlineSync.question('Your answer: ');
-    const result = func(num1, num2);
-    if (parseFloat(answer) === parseFloat(result)) {
-      output = 'Correct!';
-      console.log(output);
+        
+    if (result === answer) {
+      console.log('Correct!');
     } else {
-      output = `'${answer}' is wrong answer ;(. Correct answer was '${result}'.`;
-      console.log(output);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'.`);
       return `Let's try again, ${name}!`;
     }
   }

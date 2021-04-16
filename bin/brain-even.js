@@ -1,11 +1,7 @@
 #!/usr/bin/env node
 
-import { greeting, comparison } from '../src/index.js';
-import isEven from '../src/games/even.js';
-// Welcoming and a request for player's name
-console.log(greeting());
+import { game } from '../src/index.js';
+import { isEven, gameRule } from '../src/games/even.js';
 
-// Introducing game's rule
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-console.log(comparison(isEven));
+const evenGame = game(isEven, gameRule);
+console.log(evenGame);

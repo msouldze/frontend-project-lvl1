@@ -11,3 +11,5 @@ export default (a, b) => {
 };
 
 export const expression = (a, b) => `${a} ${operator} ${b}`;
+
+export const gameRule = 'What is the result of the expression?';
