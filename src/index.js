@@ -1,32 +1,20 @@
 import readlineSync from 'readline-sync';
-import getRandomNumber from './utilities.js';
 
-export default (func, gameRule, expression = undefined) => {
+export default (game, gameRule) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   console.log(gameRule);
-
-  for (let i = 0; i < 3; i += 1) {
-    let result;
-    if (expression !== undefined) {
-      const randomNum1 = getRandomNumber();
-      const randomNum2 = getRandomNumber();
-      const question = expression(randomNum1, randomNum2);
-      console.log(`Question: ${question}`);
-      result = String(func(randomNum1, randomNum2));
-    } else {
-      const randomNum = getRandomNumber();
-      console.log(`Question: ${randomNum}`);
-      result = func(randomNum) ? 'yes' : 'no';
-    }
+  const numberOfGames = 3; 
+  for (let i = 0; i < numberOfGames; i += 1) {
+    const result = game();
     const answer = readlineSync.question('Your answer: ');
-    if (result === answer) {
-      console.log('Correct!');
-    } else {
+    if (result !== answer) {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'.`);
-      return `Let's try again, ${name}!`;
+      console.log(`Let's try again, ${name}!`);
+      return;
     }
+    console.log('Correct!');
   }
-  return `Congratulations, ${name}!`;
+  console.log(`Congratulations, ${name}!`);
 };

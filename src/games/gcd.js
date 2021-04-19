@@ -1,4 +1,9 @@
-export default (a, b) => {
+import generateRandomNumber from '../utilities.js';
+
+export default () => {
+  const a = generateRandomNumber();
+  const b = generateRandomNumber();
+  console.log(`Question: ${a} ${b}`);
   let result = 0;
   let min = a;
   if (b < a) {
@@ -9,9 +14,7 @@ export default (a, b) => {
       result = j;
     }
   }
-  return result;
+  return String(result);
 };
-
-export const expression = (a, b) => `${a} ${b}`;
 
 export const gameRule = 'Find the greatest common divisor of given numbers.';
