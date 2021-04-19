@@ -5,7 +5,7 @@ export default (game, gameRule) => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   console.log(gameRule);
-  const numberOfGames = 3; 
+  const numberOfGames = 3;
   for (let i = 0; i < numberOfGames; i += 1) {
     const result = game();
     const answer = readlineSync.question('Your answer: ');
