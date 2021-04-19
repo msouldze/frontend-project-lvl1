@@ -13,6 +13,6 @@ const isPrime = () => {
   }
   return true;
 };
-export const isPrimeResult = () => (isPrime() ? 'yes' : 'no');
+export const isPrimeGame = () => (isPrime() ? 'yes' : 'no');
 
 export const gameRule = 'Answer "yes" if the number is prime, otherwise answer "no".';
