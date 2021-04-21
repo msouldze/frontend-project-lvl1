@@ -3,7 +3,7 @@ import generateRandomNumber from '../utilities.js';
 export default () => {
   const a = generateRandomNumber();
   const b = generateRandomNumber();
-  console.log(`Question: ${a} ${b}`);
+  const question = `${a} ${b}`;
   let result = 0;
   let min = a;
   if (b < a) {
@@ -14,7 +14,7 @@ export default () => {
       result = j;
     }
   }
-  return String(result);
+  return [String(result), question];
 };
 
 export const gameRule = 'Find the greatest common divisor of given numbers.';

@@ -12,8 +12,8 @@ export default () => {
   }
   const randomIndex = progression[num2 - 1];
   progression[num2 - 1] = '..';
-  console.log(`Question: ${progression.join(' ')}`);
-  return String(randomIndex);
+  const question = progression.join(' ');
+  return [String(randomIndex), question];
 };
 
 export const gameRule = 'What number is missing in the progression?';
