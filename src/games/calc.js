@@ -8,7 +8,7 @@ export const calculateExpression = () => {
   const operators = ['+', '-', '*'];
   const operator = operators[Math.floor(Math.random() * operators.length)];
   const question = `${a} ${operator} ${b}`;
-  
+
   if (operator === '+') {
     result.push(String(a + b));
   } else if (operator === '-') {
@@ -16,7 +16,7 @@ export const calculateExpression = () => {
   } else {
     result.push(String(a * b));
   }
-  
+
   return [...result, question];
 };
 

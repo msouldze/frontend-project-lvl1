@@ -1,5 +1,4 @@
 import generateRandomNumber from '../utilities.js';
- 
 
 const isPrime = (number) => {
   if (number === 1) {
@@ -17,6 +16,5 @@ export const isPrimeResult = () => {
   const result = isPrime(randomNumber) ? 'yes' : 'no';
   return [result, randomNumber];
 };
-
 
 export const gameRule = 'Answer "yes" if the number is prime, otherwise answer "no".';
