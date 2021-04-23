@@ -19,6 +19,4 @@ const findCommonDivisor = () => {
 
 const gameRule = 'Find the greatest common divisor of given numbers.';
 
-export default () => {
-  return { gameRule, getRound: findCommonDivisor };
-};
+export default () => ({ gameRule, getRound: findCommonDivisor });

@@ -22,6 +22,4 @@ const calculateExpression = () => {
 
 const gameRule = 'What is the result of the expression?';
 
-export default () => {
-  return { gameRule, getRound: calculateExpression };
-};
+export default () => ({ gameRule, getRound: calculateExpression });

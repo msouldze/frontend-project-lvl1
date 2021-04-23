@@ -19,6 +19,4 @@ const isPrimeResult = () => {
 
 const gameRule = 'Answer "yes" if the number is prime, otherwise answer "no".';
 
-export default () => {
-  return { gameRule, getRound: isPrimeResult };
-};
+export default () => ({ gameRule, getRound: isPrimeResult });

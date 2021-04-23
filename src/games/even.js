@@ -8,6 +8,4 @@ const isEven = () => {
 
 const gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-export default () => {
-  return { gameRule, getRound: isEven };
-};
+export default () => ({ gameRule, getRound: isEven });

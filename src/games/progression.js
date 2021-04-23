@@ -18,6 +18,4 @@ const arithmeticProgression = () => {
 
 const gameRule = 'What number is missing in the progression?';
 
-export default () => {
-  return { gameRule, getRound: arithmeticProgression };
-};
+export default () => ({ gameRule, getRound: arithmeticProgression });
