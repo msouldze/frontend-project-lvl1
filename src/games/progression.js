@@ -1,6 +1,6 @@
 import generateRandomNumber from '../utilities.js';
 
-export default () => {
+const arithmeticProgression = () => {
   const num1 = generateRandomNumber();
   const num2 = generateRandomNumber();
   const progression = [];
@@ -10,10 +10,14 @@ export default () => {
     value += num2;
     progression.push(value);
   }
-  const randomIndex = progression[num2 - 1];
+  const answer = progression[num2 - 1];
   progression[num2 - 1] = '..';
   const question = progression.join(' ');
-  return [String(randomIndex), question];
+  return [question, String(answer)];
 };
 
-export const gameRule = 'What number is missing in the progression?';
+const gameRule = 'What number is missing in the progression?';
+
+export default () => {
+  return { gameRule, getRound: arithmeticProgression };
+};

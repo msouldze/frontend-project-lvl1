@@ -11,10 +11,14 @@ const isPrime = (number) => {
   }
   return true;
 };
-export const isPrimeResult = () => {
+const isPrimeResult = () => {
   const randomNumber = generateRandomNumber();
-  const result = isPrime(randomNumber) ? 'yes' : 'no';
-  return [result, randomNumber];
+  const answer = isPrime(randomNumber) ? 'yes' : 'no';
+  return [randomNumber, answer];
 };
 
-export const gameRule = 'Answer "yes" if the number is prime, otherwise answer "no".';
+const gameRule = 'Answer "yes" if the number is prime, otherwise answer "no".';
+
+export default () => {
+  return { gameRule, getRound: isPrimeResult };
+};

@@ -1,7 +1,7 @@
 import generateRandomNumber from '../utilities.js';
 
-export const calculateExpression = () => {
-  const result = [];
+const calculateExpression = () => {
+  const answer = [];
   const a = generateRandomNumber();
   const b = generateRandomNumber();
 
@@ -10,14 +10,18 @@ export const calculateExpression = () => {
   const question = `${a} ${operator} ${b}`;
 
   if (operator === '+') {
-    result.push(String(a + b));
+    answer.push(String(a + b));
   } else if (operator === '-') {
-    result.push(String(a - b));
+    answer.push(String(a - b));
   } else {
-    result.push(String(a * b));
+    answer.push(String(a * b));
   }
 
-  return [...result, question];
+  return [question, ...answer];
 };
 
-export const gameRule = 'What is the result of the expression?';
+const gameRule = 'What is the result of the expression?';
+
+export default () => {
+  return { gameRule, getRound: calculateExpression };
+};
