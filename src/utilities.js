@@ -1,1 +1,1 @@
-export default () => Math.ceil(Math.random() * 10);
+export default (min = 0, max = 10) => Math.ceil(Math.random() * (max - min));
