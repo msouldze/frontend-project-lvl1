@@ -1,11 +1,13 @@
 import generateRandomNumber from '../utilities.js';
 
-const isEven = () => {
-  const randomNumber = generateRandomNumber();
-  const answer = randomNumber % 2 === 0 ? 'yes' : 'no';
-  return [randomNumber, answer];
+const isEven = (num) => num % 2 === 0;
+
+const getRound = () => {
+  const question = generateRandomNumber();
+  const answer = isEven(question) ? 'yes' : 'no';
+  return [question, answer];
 };
 
 const gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-export default () => ({ gameRule, getRound: isEven });
+export default () => ({ gameRule, getRound});

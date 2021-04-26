@@ -1,25 +1,28 @@
 import generateRandomNumber from '../utilities.js';
 
-const calculateExpression = () => {
-  const answer = [];
+const operators = ['+', '-', '*'];
+const operator = operators[Math.floor(Math.random() * operators.length)];
+
+const calculateExpression = (a, b) => {
+  let result = '';
+  if (operator === '+') {
+    result = a + b;
+  } else if (operator === '-') {
+    result = a - b;
+  } else {
+    result = a * b;
+  }
+  return result;
+};
+
+const getRound = () => {
   const a = generateRandomNumber();
   const b = generateRandomNumber();
-
-  const operators = ['+', '-', '*'];
-  const operator = operators[Math.floor(Math.random() * operators.length)];
+  const answer = String(calculateExpression(a, b));
   const question = `${a} ${operator} ${b}`;
-
-  if (operator === '+') {
-    answer.push(String(a + b));
-  } else if (operator === '-') {
-    answer.push(String(a - b));
-  } else {
-    answer.push(String(a * b));
-  }
-
-  return [question, ...answer];
+  return [question, answer];
 };
 
 const gameRule = 'What is the result of the expression?';
 
-export default () => ({ gameRule, getRound: calculateExpression });
+export default () => ({ gameRule, getRound });
