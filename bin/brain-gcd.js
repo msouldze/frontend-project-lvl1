@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import startGame from '../src/index.js';
-import findCommonDivisor from '../src/games/gcd.js';
+import start from '../src/index.js';
+import game from '../src/games/gcd.js';
 
-startGame(findCommonDivisor);
+start(game);
