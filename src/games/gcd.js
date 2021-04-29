@@ -18,7 +18,7 @@ const getRound = () => {
   const a = generateRandomNumber();
   const b = generateRandomNumber();
   const question = `${a} ${b}`;
-  const answer = String(findCommonDivisor(a, b));
+  const answer = findCommonDivisor(a, b).toString();
 
   return [question, answer];
 };

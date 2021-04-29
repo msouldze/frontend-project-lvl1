@@ -1,9 +1,6 @@
 import generateRandomNumber from '../utilities.js';
 
-const operators = ['+', '-', '*'];
-const operator = operators[Math.floor(Math.random() * operators.length)];
-
-const calculateExpression = (a, b) => {
+const calculateExpression = (a, b, operator) => {
   let result = '';
   if (operator === '+') {
     result = a + b;
@@ -18,7 +15,13 @@ const calculateExpression = (a, b) => {
 const getRound = () => {
   const a = generateRandomNumber();
   const b = generateRandomNumber();
-  const answer = String(calculateExpression(a, b));
+  
+  const operators = ['+', '-', '*'];
+  const length = operators.length;
+  const randomOperator = generateRandomNumber(0, length)
+  const operator = operators[randomOperator];
+
+  const answer = calculateExpression(a, b, operator).toString();
   const question = `${a} ${operator} ${b}`;
   return [question, answer];
 };
