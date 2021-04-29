@@ -17,7 +17,7 @@ const getRound = () => {
   const b = generateRandomNumber();
 
   const operators = ['+', '-', '*'];
-  const randomOperator = generateRandomNumber(0, operators.length);
+  const randomOperator = generateRandomNumber(0, operators.length - 1);
   const operator = operators[randomOperator];
 
   const answer = calculateExpression(a, b, operator).toString();
