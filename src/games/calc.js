@@ -15,10 +15,9 @@ const calculateExpression = (a, b, operator) => {
 const getRound = () => {
   const a = generateRandomNumber();
   const b = generateRandomNumber();
-  
+
   const operators = ['+', '-', '*'];
-  const length = operators.length;
-  const randomOperator = generateRandomNumber(0, length)
+  const randomOperator = generateRandomNumber(0, operators.length);
   const operator = operators[randomOperator];
 
   const answer = calculateExpression(a, b, operator).toString();
