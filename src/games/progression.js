@@ -1,22 +1,26 @@
 import generateRandomNumber from '../utilities.js';
 
-const createProgression = (firstValue, diff) => {
+const createProgression = (firstValue, diff, progressionLength = 10) => {
   let progression = [];
-  const progressionLength = 10;
   for (let value = firstValue; progression.length < progressionLength; value += diff) {
     progression = [...progression, value];
   }
   return progression;
 };
 
+const hideProgressionValue = (progression, hiddenIndex) => {
+  progression[hiddenIndex] = '..';
+  const result = progression.join(' ');
+  return result;
+};
+
 const getRound = () => {
   const firstValue = generateRandomNumber(1, 10);
   const diff = generateRandomNumber(1, 10);
+  const hiddenIndex = generateRandomNumber();
   const progression = createProgression(firstValue, diff);
-  const hiddenValue = generateRandomNumber();
-  const answer = (progression[hiddenValue]).toString();
-  progression[hiddenValue] = '..';
-  const question = progression.join(' ');
+  const answer = (progression[hiddenIndex]).toString();
+  const question = hideProgressionValue(progression, hiddenIndex);
   return [question, answer];
 };
 
