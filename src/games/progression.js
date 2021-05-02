@@ -9,9 +9,9 @@ const createProgression = (firstValue, diff, progressionLength = 10) => {
 };
 
 const hideProgressionValue = (progression, hiddenIndex) => {
-  progression[hiddenIndex] = '..';
-  const result = progression.join(' ');
-  return result;
+  const result = progression;
+  result[hiddenIndex] = '..';
+  return result.join(' ');
 };
 
 const getRound = () => {
