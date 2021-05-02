@@ -1,18 +1,12 @@
 import generateRandomNumber from '../utilities.js';
 
 const findCommonDivisor = (a, b) => {
-  let result = 0;
-  let min = a;
-  if (b < a) {
-    min = b;
-  }
-  for (let j = 1; j <= min; j += 1) {
-    if (a % j === 0 && b % j === 0) {
-      result = j;
-    }
-  }
-  return result;
-};
+  if (!b) {
+     return a;
+   }
+ 
+   return findCommonDivisor(b, a % b);
+ };
 
 const getRound = () => {
   const a = generateRandomNumber();
