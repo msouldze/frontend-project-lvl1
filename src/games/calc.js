@@ -1,7 +1,7 @@
 import generateRandomNumber from '../utilities.js';
 
 const calculateExpression = (a, b, operator) => {
-  let result = '';
+  let result;
   if (operator === '+') {
     result = a + b;
   } else if (operator === '-') {
